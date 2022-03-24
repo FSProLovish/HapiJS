@@ -46,6 +46,14 @@ const users = {
 //   }
 // };
 
+const validate = async function (decode, request, h) {
+  if (!people[decoded.id]) {
+    return { isValid: false };
+  } else {
+    return { isValid: true };
+  }
+};
+
 const init = async () => {
   const server = Hapi.Server({
     port: 8000,
